@@ -73,14 +73,14 @@ export default function ChatContainer({ currentChat, socket }) {
     <Container>
       <div className="chat-header">
         <div className="user-details">
-          <div className="avatar">
+          {/* <div className="avatar">
             <img
               src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
               alt=""
             />
-          </div>
+          </div> */}
           <div className="username">
-            <h3>{currentChat.username}</h3>
+            <h3>{currentChat&&currentChat.username}</h3>
           </div>
         </div>
         <Logout />
@@ -131,13 +131,13 @@ const Container = styled.div`
       }
       .username {
         h3 {
-          color: white;
+          color: blue;
         }
       }
     }
   }
   .chat-messages {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -159,7 +159,7 @@ const Container = styled.div`
         padding: 1rem;
         font-size: 1.1rem;
         border-radius: 1rem;
-        color: #d1d1d1;
+        color: #6a6464;
         @media screen and (min-width: 720px) and (max-width: 1080px) {
           max-width: 70%;
         }
@@ -168,7 +168,7 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background-color: #4f04ff21;
+        background-color: #04ff0d21;
       }
     }
     .recieved {

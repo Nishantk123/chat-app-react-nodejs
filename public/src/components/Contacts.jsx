@@ -19,11 +19,11 @@ export default function Contacts({ contacts, changeChat }) {
   };
   return (
     <>
-      {currentUserImage && currentUserImage && (
+      {true && (
         <Container>
           <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h3>snappy</h3>
+            {/* <img src={Logo} alt="logo" /> */}
+            <h3>SAMVAADH </h3>
           </div>
           <div className="contacts">
             {contacts.map((contact, index) => {
@@ -35,12 +35,12 @@ export default function Contacts({ contacts, changeChat }) {
                   }`}
                   onClick={() => changeCurrentChat(index, contact)}
                 >
-                  <div className="avatar">
+                  {/* <div className="avatar">
                     <img
                       src={`data:image/svg+xml;base64,${contact.avatarImage}`}
                       alt=""
                     />
-                  </div>
+                  </div> */}
                   <div className="username">
                     <h3>{contact.username}</h3>
                   </div>
@@ -48,7 +48,7 @@ export default function Contacts({ contacts, changeChat }) {
               );
             })}
           </div>
-          <div className="current-user">
+          {/* <div className="current-user">
             <div className="avatar">
               <img
                 src={`data:image/svg+xml;base64,${currentUserImage}`}
@@ -56,9 +56,9 @@ export default function Contacts({ contacts, changeChat }) {
               />
             </div>
             <div className="username">
-              <h2>{currentUserName}</h2>
+              <h6>{currentUserName}</h6>
             </div>
-          </div>
+          </div> */}
         </Container>
       )}
     </>
@@ -68,7 +68,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #080420;
+  background-color: #27096f;
   .brand {
     display: flex;
     align-items: center;
@@ -80,6 +80,7 @@ const Container = styled.div`
     h3 {
       color: white;
       text-transform: uppercase;
+      font-size: 12px !important;
     }
   }
   .contacts {
@@ -91,14 +92,14 @@ const Container = styled.div`
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #ffffff39;
+        background-color: #27096f;
         width: 0.1rem;
         border-radius: 1rem;
       }
     }
     .contact {
-      background-color: #ffffff34;
-      min-height: 5rem;
+      background-color: #27096f;
+      min-height: 2rem;
       cursor: pointer;
       width: 90%;
       border-radius: 0.2rem;
@@ -115,6 +116,8 @@ const Container = styled.div`
       .username {
         h3 {
           color: white;
+      font-size: 12px !important;
+
         }
       }
     }
@@ -124,7 +127,7 @@ const Container = styled.div`
   }
 
   .current-user {
-    background-color: #0d0d30;
+    background-color: #27096f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,14 +139,14 @@ const Container = styled.div`
       }
     }
     .username {
-      h2 {
+      h6 {
         color: white;
       }
     }
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       gap: 0.5rem;
       .username {
-        h2 {
+        h6 {
           font-size: 1rem;
         }
       }

@@ -52,8 +52,8 @@ const Container = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 5% 95%;
-  background-color: #080420;
-  padding: 0 2rem;
+  background-color: gray;
+  padding: 0 1rem;
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     padding: 0 1rem;
     gap: 1rem;
@@ -62,9 +62,10 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     color: white;
-    gap: 1rem;
+    gap: 0rem;
     .emoji {
       position: relative;
+      margin-right:5px;
       svg {
         font-size: 1.5rem;
         color: #ffff00c8;

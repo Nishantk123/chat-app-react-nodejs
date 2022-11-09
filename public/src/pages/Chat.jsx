@@ -34,12 +34,12 @@ export default function Chat() {
 
   useEffect(async () => {
     if (currentUser) {
-      if (currentUser.isAvatarImageSet) {
+      // if (currentUser.isAvatarImageSet) {
         const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
         setContacts(data.data);
-      } else {
-        navigate("/setAvatar");
-      }
+      // } else {
+      //   navigate("/setAvatar");
+      // }
     }
   }, [currentUser]);
   const handleChatChange = (chat) => {
@@ -50,11 +50,11 @@ export default function Chat() {
       <Container>
         <div className="container">
           <Contacts contacts={contacts} changeChat={handleChatChange} />
-          {currentChat === undefined ? (
+          {/* {currentChat === undefined ? (
             <Welcome />
-          ) : (
+          ) : ( */}
             <ChatContainer currentChat={currentChat} socket={socket} />
-          )}
+          {/* )} */}
         </div>
       </Container>
     </>
@@ -69,13 +69,13 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #ffffff;
   .container {
-    height: 85vh;
-    width: 85vw;
-    background-color: #00000076;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 15% 85%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
       grid-template-columns: 35% 65%;
     }
