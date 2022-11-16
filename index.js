@@ -25,12 +25,18 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if(process.env.NODE_ENV ==="production"){
-  app.use(express.static('public/build'))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "public", "build")));
+
+  // ...
+  // Right before your app.listen(), add this:
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "build", "index.html"));
+  });
 }
 
-const server = app.listen(process.env.PORT ||5000, () =>
-  console.log(`Server started on ${process.env.PORT|| 5000}`)
+const server = app.listen(process.env.PORT || 5000, () =>
+  console.log(`Server started on ${process.env.PORT || 5000}`)
 );
 const io = socket(server, {
   cors: {
